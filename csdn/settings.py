@@ -36,6 +36,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "blog",
+    "csauth"
 ]
 
 MIDDLEWARE = [
@@ -76,8 +78,10 @@ WSGI_APPLICATION = "csdn.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.mysql",
+        'OPTIONS': {
+            'read_default_file': 'my.cnf',
+        },
     }
 }
 
@@ -121,6 +125,14 @@ STATIC_URL = "static/"
 STATICFILES_DIRS =[
     BASE_DIR / "static",
 ]
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.qq.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = '2959186397@qq.com'
+EMAIL_HOST_PASSWORD = 'lusrsyafslemddhd'
+DEFAULT_FROM_EMAIL = '2959186397@qq.com'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
