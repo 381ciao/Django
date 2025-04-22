@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>博客详情</title>
+    <link rel="stylesheet" href="{% static 'bootstrap/bootstrap.min.css' %}">
+    <script src="{% static 'bootstrap/bootstrap.min.js' %}"></script>
+    <script src="{% static 'bootstrap/popper.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+</head>
+<body>
+<header class="p-3 text-bg-light border-bottom mb-3">
+    <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                <img src="{% static 'image/logo.webp' %}" height="40px">
+            </a>
+
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                <li><a href="#" class="nav-link px-2 text-secondary">首页</a></li>
+                <li><a href="#" class="nav-link px-2 text-secondary">发布博客</a></li>
+            </ul>
+
+            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+                <input type="search" class="form-control form-control-dark " placeholder="搜索" aria-label="Search">
+            </form>
+
+            <div class="text-end">
+                <button type="button" class="btn btn-outline-primary me-2">登录</button>
+                <button type="button" class="btn btn-primary">注册</button>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main class="container bg-white p-2 rounded">
+    <h1>博客详情</h1>
+    <hr>
+    <div class="my-2">
+        <img src="{% static 'image/user.jpg' %}" class="rounded-circle" height="30px" width="30px" alt="">
+        <spean class="ms-2">Batman</spean>
+        <spean class="ms-2">于</spean>
+        <spean class="ms-2">2025年4月21号 04:50</spean>发布
+    </div>
+    <hr>
+    <div class="my-2">
+        博客内容
+    </div>
+    <hr>
+    <div>
+        <h2>评论（2）：</h2>
+        <form action="" method="post" class="my-2">
+            <div>
+                <input class="form-control" type="text"  placeholder="输入内容" >
+            </div>
+            <div class="text-end">
+                <button type="button" class="btn btn-outline-primary my-2 ">评论</button>
+            </div>
+        </form>
+        <div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item ">
+                    <div class="d-flex justify-content-between text-secondary-emphasis">
+                        <div >
+                        <img src="{% static 'image/user.jpg' %}" class="rounded-circle" height="20px" width="20px" alt="">
+                        <span>Batman</span>
+                    </div>
+                    <div> 2025年4月21号 04:50</div>
+                    </div>
+                    <div class="mt-2">
+                        这是评论
+                    </div>
+                </li>
+                <li class="list-group-item ">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                        <img src="{% static 'image/user.jpg' %}" class="rounded-circle" height="20px" width="20px" alt="">
+                        <span>Batman</span>
+                    </div>
+                    <div> 2025年4月21号 04:50</div>
+                    </div>
+                    <div class="mt-2">
+                        这是评论
+                    </div>
+                </li>
+                <li class="list-group-item ">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                        <img src="{% static 'image/user.jpg' %}" class="rounded-circle" height="20px" width="20px" alt="">
+                        <span>Batman</span>
+                    </div>
+                    <div> 2025年4月21号 04:50</div>
+                    </div>
+                    <div class="mt-2">
+                        这是评论
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</main>
+</body>
+</html>
