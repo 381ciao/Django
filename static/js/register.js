@@ -8,6 +8,22 @@ $(function (){
                 return;
             }
             $this.off('click');
+
+            // 发送ajax请求
+            $.ajax('/csauth/captcha?email='+email,{
+                method:'GET',
+                success:function (result) {
+                    if (result['code'] === 200){
+                        alert("验证码发送成功!");
+                    }else{
+                        alert(result['message']);
+                    }
+                },
+                fail:function (error) {
+                    console.log(error);
+                }
+            })
+
             let countdown = 6;
             let timer = setInterval(function (){
                 if (countdown <= 0){
