@@ -24,8 +24,8 @@
                 <li><a href="{% url 'blog:pub' %}" class="nav-link px-2 text-secondary">发布博客</a></li>
             </ul>
 
-            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-                <input type="search" class="form-control form-control-dark " placeholder="搜索" aria-label="Search">
+            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search" action="{% url 'blog:search' %}" method="get">
+                <input type="search" class="form-control form-control-dark " placeholder="搜索" name="q" aria-label="Search">
             </form>
 
             {% if user.is_authenticated %}

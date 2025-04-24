@@ -7,56 +7,25 @@
 {% block main %}
 	<h1>博客列表</h1>
     <div class="row row-cols-2 row-gap-4">
+        {% for blog in blogs %}
         <div class="col">
             <div class="card">
                 <div class="card-header">
-                    <a href="">Django基础知识</a>
+                    <a href="{% url 'blog:detail' blog_id=blog.id %}">{{ blog.title }}</a>
                 </div>
                 <div class="card-body" style="height: 100px">
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <p class="card-text">{{ blog.content|striptags|truncatechars:20 }}</p>
                 </div>
                 <div class="card-footer text-muted d-flex justify-content-between">
                     <div>
                         <img src="{% static 'image/user.jpg' %}" class="rounded-circle" height="30px" width="30px" alt="">
-                        Batman
+                        {{ blog.author.username }}
                     </div>
-                    <div>发布时间： 2025年4月21号 04:50</div>
+                    <div>发布时间：{{ comment.pub_time|date:'Y年m月d日 h时i分' }}</div>
                 </div>
             </div>
         </div>
-        <div class="col">
-            <div class="card">
-                <div class="card-header">
-                    <a href="">Django基础知识</a>
-                </div>
-                <div class="card-body" style="height: 100px">
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                </div>
-                <div class="card-footer text-muted d-flex justify-content-between">
-                    <div>
-                        <img src="{% static 'image/user.jpg' %}" class="rounded-circle" height="30px" width="30px" alt="">
-                        Batman
-                    </div>
-                    <div>发布时间： 2025年4月21号 04:50</div>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card">
-                <div class="card-header">
-                    <a href="">Django基础知识</a>
-                </div>
-                <div class="card-body" style="height: 100px">
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                </div>
-                <div class="card-footer text-muted d-flex justify-content-between">
-                    <div>
-                        <img src="{% static 'image/user.jpg' %}" class="rounded-circle" height="30px" width="30px" alt="">
-                        Batman
-                    </div>
-                    <div>发布时间： 2025年4月21号 04:50</div>
-                </div>
-            </div>
-        </div>
+    {% endfor %}
+
     </div>
 {% endblock %}
